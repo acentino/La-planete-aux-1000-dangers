@@ -93,20 +93,26 @@ public class ChoiceHandler implements ActionListener{
 			case "c1": Mouches(); break;
 			case "c2": Fruits(); break;
 			}
-
+		
 		case "Mouches":
 			switch(yourChoice) {
-			case "c1": Canyon(); break;
-			case "c2": Canyon(); break;
-			case "c3": Canyon(); break;
+			case "c1": GameOver() ; break;
+			case "c2": GameOver() ; break;
+			case "c3": GameOver() ; break;
 			}
-
+		
 		case "Fruits":
 			switch(yourChoice) {
-			case "c1": Canyon(); break;
-			case "c2": Canyon(); break;
-			case "c3": Canyon(); break;
-			case "c4": Canyon(); break;
+			case "c1": GameOver(); break;
+			case "c2": GameOver(); break;
+			case "c3": GameOver(); break;
+			case "c4": GameOver(); break;
+			}
+		
+
+		case "GameOver":
+			switch(yourChoice) {
+			case "c1": Debut(); break;
 			}
 		}
 	}
@@ -235,7 +241,7 @@ public class ChoiceHandler implements ActionListener{
 		choice3.setVisible(false);
 		choice4.setVisible(false);
 		choice1.setText("Descendre");
-		choice2.setText("Grimper");
+		choice2.setText("Contourner");
 		
 	}
 	
@@ -250,8 +256,8 @@ public class ChoiceHandler implements ActionListener{
 		choice3.setVisible(true);
 		choice4.setVisible(false);
 		choice1.setText("Attendre");
-		choice2.setText("Sauter sur le bord opposé du Canyon");
-		choice3.setText("Chercher une faille pour s'abriter");
+		choice2.setText("Sauter sur le bord opposé");
+		choice3.setText("Chercher une faille dans la fallaise");
 		
 	}
 	
@@ -270,6 +276,19 @@ public class ChoiceHandler implements ActionListener{
 		choice3.setText("Observer");
 		choice4.setText("Passer votre chemin");
 		
+	}
+	
+	public void GameOver() {
+		
+		position = "GameOver";
+				
+		mainTextArea.setText("Vous etes mort.");
+		
+		choice1.setVisible(true);
+		choice2.setVisible(false);
+		choice3.setVisible(false);
+		choice4.setVisible(false);
+		choice1.setText("Recommancer");		
 	}
 	
 }
